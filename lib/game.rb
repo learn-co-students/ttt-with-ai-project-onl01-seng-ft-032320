@@ -12,7 +12,7 @@ class Game
     [2, 4, 6]
   ]
   
-  def initialize(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new)
+  def initialize(player_1 = Players::Human.new("X"), board = Board.new, player_2 = Players::Computer.new("O"))
     @player_1 = player_1
     @player_2 = player_2
     @board = board
@@ -60,7 +60,7 @@ class Game
       @board.update(current_move, player)
       puts "#{player.token} moved #{current_move}"
       @board.display
-      puts ""
+      puts "\n"
     end
     
   end 
